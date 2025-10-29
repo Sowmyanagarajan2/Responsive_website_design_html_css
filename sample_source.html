@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Query Mobile-First Technique</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* MOBILE FIRST - Base Styles for Mobile */
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 15px;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav li {
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 5px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: white;
+            padding: 30px 15px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            color: #f5576c;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 30px 15px;
+            background: #f9f9f9;
+        }
+
+        .services h2 {
+            text-align: center;
+            color: #f5576c;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 auto 15px;
+        }
+
+        .service-card h3 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #666;
+            text-align: center;
+        }
+
+        /* About Section */
+        .about {
+            padding: 30px 15px;
+            background: white;
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            color: #f5576c;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+
+        .about-text {
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 30px 15px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .stat-item {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 30px 15px;
+        }
+
+        .footer-section {
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            color: #f5576c;
+            margin-bottom: 15px;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* TABLET - 768px and up */
+        @media (min-width: 768px) {
+            /* Header becomes horizontal */
+            .header-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .logo {
+                margin-bottom: 0;
+                text-align: left;
+            }
+
+            nav ul {
+                display: flex;
+                gap: 15px;
+            }
+
+            nav li {
+                margin-bottom: 0;
+            }
+
+            /* Hero side by side */
+            .hero {
+                padding: 60px 30px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            /* Services in 2 columns */
+            .services {
+                padding: 60px 30px;
+            }
+
+            .services h2 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .service-card {
+                flex: 1 1 calc(50% - 10px);
+                margin-bottom: 0;
+            }
+
+            /* About section side by side */
+            .about {
+                padding: 60px 30px;
+            }
+
+            .about-content {
+                display: flex;
+                gap: 30px;
+                align-items: center;
+            }
+
+            .about-text {
+                flex: 1;
+            }
+
+            .about-image {
+                flex: 1;
+                height: 300px;
+            }
+
+            /* Stats in a row */
+            .stats {
+                padding: 60px 30px;
+            }
+
+            .stats-grid {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            .stat-item {
+                margin-bottom: 0;
+            }
+
+            /* Footer columns */
+            .footer-content {
+                display: flex;
+                gap: 40px;
+                justify-content: space-between;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .footer-section {
+                flex: 1;
+                margin-bottom: 0;
+            }
+        }
+
+        /* DESKTOP - 1024px and up */
+        @media (min-width: 1024px) {
+            header {
+                padding: 20px 30px;
+            }
+
+            .hero {
+                padding: 80px 30px;
+                text-align: left;
+            }
+
+            .hero-content {
+                max-width: 1200px;
+                margin: 0 auto;
+                display: flex;
+                gap: 50px;
+                align-items: center;
+            }
+
+            .hero-text {
+                flex: 1;
+            }
+
+            .hero-image {
+                flex: 1;
+                height: 350px;
+                margin-top: 0;
+            }
+
+            /* Services in 3 columns */
+            .service-card {
+                flex: 1 1 calc(33.333% - 20px);
+            }
+
+            .stat-number {
+                font-size: 3.5rem;
+            }
+
+            .stat-label {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* LARGE DESKTOP - 1440px and up */
+        @media (min-width: 1440px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .hero p {
+                font-size: 1.4rem;
+            }
+
+            .services h2,
+            .about h2 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">MediaQuery Site</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Mobile-First Design</h1>
+                <p>This website is built with a mobile-first approach using media queries. The base styles are optimized for mobile, then enhanced for larger screens at 768px, 1024px, and 1440px breakpoints.</p>
+            </div>
+            <div class="hero-image">
+                Hero Visual
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🎯</div>
+                <h3>Strategy</h3>
+                <p>Comprehensive digital strategy tailored to your business goals and target audience.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💻</div>
+                <h3>Development</h3>
+                <p>Custom web development with modern, responsive techniques for all devices.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🎨</div>
+                <h3>Design</h3>
+                <p>Beautiful, user-centered designs that engage and convert your visitors.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📱</div>
+                <h3>Mobile First</h3>
+                <p>Optimized experiences for mobile users who make up the majority of web traffic.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Performance</h3>
+                <p>Lightning-fast load times and optimized performance across all devices.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>Maintenance</h3>
+                <p>Ongoing support and maintenance to keep your site running smoothly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Our Approach</h2>
+                <p>We believe in starting with mobile design first. Why? Because mobile users now make up over 60% of web traffic. By designing for the smallest screens first, we ensure your content is clear, concise, and focused.</p>
+                <p>Then we progressively enhance the experience for larger screens using media queries at strategic breakpoints. This ensures optimal viewing on phones, tablets, laptops, and large desktop monitors.</p>
+                <p>The result? A website that looks great and functions perfectly on every device your users own.</p>
+            </div>
+            <div class="about-image">
+                About Visual
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Client Satisfaction</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Team Members</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Support Available</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Company</h4>
+                <a href="#about">About Us</a>
+                <a href="#team">Our Team</a>
+                <a href="#careers">Careers</a>
+                <a href="#press">Press</a>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <a href="#web">Web Design</a>
+                <a href="#mobile">Mobile Apps</a>
+                <a href="#ecommerce">E-commerce</a>
+                <a href="#seo">SEO Services</a>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <a href="#blog">Blog</a>
+                <a href="#docs">Documentation</a>
+                <a href="#support">Support</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Email: hello@mediaquery.com</p>
+                <p>Phone: (555) 987-6543</p>
+                <p>Address: 456 Design Ave</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
